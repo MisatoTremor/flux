@@ -18,7 +18,8 @@
 						<f:for each="{gridcolumn.areas}" as="area">
 							<flux:be.contentArea area="{area.name}" row="{row}">
 								<div class="fce-header t3-page-colHeader">
-									<flux:be.link.content.new row="{row}" area="{area.name}" />
+									<span><flux:be.link.content.new row="{row}" area="{area.name}" /></span>
+									<span style="left: 24px;"><flux:be.link.content.paste row="{row}" area="{area.name}" /></span>
 									<div><f:translate key="{area.label}" default="{area.label}" /></div>
 								</div>
 								<div class="fce-container">
