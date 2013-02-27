@@ -53,16 +53,15 @@ class Tx_Flux_ViewHelpers_Be_Link_Content_PasteViewHelper extends Tx_Flux_Core_V
 			return '';
 		}
 
-//		$pid = $this->arguments['row']['pid'];
+		$pid = $this->arguments['row']['pid'];
 		$uid = $this->arguments['row']['uid'];
 		$area = $this->arguments['area'];
-//		$sysLang = $this->arguments['row']['sys_language_uid'];
-//		$returnUri = $this->getReturnUri($pid);
-//		if ($area) {
-//			$returnUri .= '%23' . $area . '%3A' . $uid;
-//		}
+		$returnUri = $this->getReturnUri($pid);
+		if ($area) {
+			$returnUri .= '%23' . $area . '%3A' . $uid;
+		}
 		$icon = $this->getIcon('actions-document-paste-after', 'Paste content element after this position');
-		$uri = $clipObj->pasteUrl('tt_content', -$uid, 0);
+		$uri = $clipObj->pasteUrl('tt_content', -$uid, 0) . '&redirect=' . $returnUri;
 		return $this->wrapLink($icon, $uri);
 	}
 }
