@@ -52,7 +52,6 @@ class Tx_Flux_ViewHelpers_Be_Link_Content_PasteViewHelper extends Tx_Flux_Core_V
 		if(!$clipObj->isElements()) {
 			return '';
 		}
-
 		$pid = $this->arguments['row']['pid'];
 		$uid = $this->arguments['row']['uid'];
 		$area = $this->arguments['area'];
